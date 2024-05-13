@@ -1,0 +1,85 @@
+{
+  "header": {
+    "button": "Đăng nhập"
+  },
+  "heading": {
+    "content": "Phần mềm tự động zalo gửi tin nhắn hàng loạt "
+  },
+  "features": {
+    "title": "Những tính năng nổi bật của công cụ",
+    "subTitle": "Đây là những tính năng đặc trưng",
+    "list": {
+      "managerJob": {
+        "nameFeatures": "Quản lí Jobs",
+        "description": "Bạn có thể tạo và quản lí các chiến dịch bao gồm nội dụng, khung giờ, tài khoản, khách hàng"
+      },
+      "autoPost": {
+        "nameFeatures": "Đăng bài tự động",
+        "description": "Bạn có thể lên lịch hẹn ngày giờ, thời gian, nội dung để công cụ có thể đăng bài tự động"
+      },
+      "managerAccount": {
+        "nameFeatures": "Quản lí tài khoản Zalo",
+        "description": "Bạn có thể quản lí tất cả tài khoản Zalo, bảo gồm cả tài khoản của nhân viên"
+      },
+      "managerProxy": {
+        "nameFeatures": "Quản lí Proxy",
+        "description": "Bạn có thể quản lí tất cả Proxy, bao gồm cả Proxy của nhân viên"
+      },
+      "flexibleDevice": {
+        "nameFeatures": "Sử dụng trên mọi thiết bị",
+        "description": "Bạn có thể thao tác, quản lí, sử dụng công cụ trên mọi thiết bị như điện thoại, laptop, ipad,..."
+      },
+      "support": {
+        "nameFeatures": "Hỗ trợ 24/7",
+        "description": "Luôn luôn được hỗ trợ các vấn đề, giải đáp thắc mắc, tư vấn, hướng dẫn mọi lúc"
+      }
+    },
+    "button": "Xem thêm"
+  },
+  "coreValues": {
+    "title": "Giá trị thông minh có thể bạn sẽ thích",
+    "subTitle": "Giá trị cốt lõi",
+    "featuresAutomation": {
+      "name": "Những tính năng tự động hóa",
+      "description": "Công cụ giúp bạn làm Zalo Marketing đơn giản nhưng hiệu quả hơn bao giờ hết, tự động hóa toàn bộ kênh zalo của bạn"
+    },
+    "flexibleAndEasyUsing": {
+      "name": "Tương thích và dễ dàng sử dụng",
+      "description": "Giao diện tương thích với mọi thiết của bạn và có thiết kế trực quan, dễ sử dụng và mang lại hiệu quả cao"
+    }
+  },
+  "Solution": {
+    "title": "Ứng dụng giúp bạn không cần phải làm thủ công các công việc tốn nhiều thời gian",
+    "subTitle": "GIẢI QUYẾT VẤN ĐỀ CỦA BẠN",
+    "list": [
+      {
+        "content": "Tự động kết bạn, chi sẻ nội dung hình ảnh và video"
+      },
+      {
+        "content": "Tự động tham gia nhóm theo link"
+      },
+      {
+        "content": "Tự động gửi tin nhắn hình ảnh đến bạn bè và số điện thoại"
+      },
+      {
+        "content": "Tự động đăng bài viết và quản lí các chiến dịch"
+      }
+    ]
+  },
+  "toolUI": {
+    "title": "Giao diện các tính năng của công cụ",
+    "subTitle": "Giúp bạn có góc nhìn trực quan về giao diện"
+  },
+  "smartOptions": {
+    "title": "Lựa chọn thông minh trong công việc",
+    "subTitle": "Hãy chọn công cụ phục vụ cho công việc chúng ta"
+  },
+  "QA": {
+    "title": "Câu hỏi và giải đáp",
+    "subTitle": "Những câu hỏi của bạn và giải đáp của chúng tôi"
+  },
+  "footer": {
+    "title": "Đăng kí để nhận các thông báo về cập nhật",
+    "subTitle": "Bằng cách đăng ký bằng thư của bạn, bạn sẽ chấp nhận chính sách bảo mật của chúng tôi"
+  }
+}

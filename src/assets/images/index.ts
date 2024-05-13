@@ -8,6 +8,8 @@ import digitalTools from "./Digital_tools_1.png";
 import dashboardImage from "./browser_2.png";
 import browser from "./browser.png";
 import browserTwo from "./browser_2.png";
+import browserThree from "./course_1.png";
+import featuresSix from "./features_6.png";
 
 const images = {
   features,
@@ -20,6 +22,8 @@ const images = {
   dashboardImage,
   browser,
   browserTwo,
+  browserThree,
+  featuresSix,
 };
 
 export default images;

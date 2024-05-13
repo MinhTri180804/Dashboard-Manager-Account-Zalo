@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {},
     fontFamily: {
-      work: "Work Sans, sans-serif",
+      montserrat: "montserrat",
     },
   },
   plugins: [],

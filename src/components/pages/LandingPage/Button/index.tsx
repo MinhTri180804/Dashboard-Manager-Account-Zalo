@@ -2,9 +2,9 @@ interface ButtonLandingPageProps {
   content: string;
 }
 
-const ButtonLandingPage = ({ content }: ButtonLandingPageProps) => {
+const ButtonLandingPage: React.FC<ButtonLandingPageProps> = ({ content }) => {
   return (
-    <button className="font-work rounded-[5px] bg-[#02073E] px-5 py-3 text-[14px]  text-white">
+    <button className=" rounded-[5px] bg-[#02073E] px-5 py-3 font-montserrat text-[14px] text-white">
       {content}
     </button>
   );

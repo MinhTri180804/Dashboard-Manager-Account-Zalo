@@ -1,19 +1,21 @@
 import logoImages from "../../../../assets/logo";
 import ButtonLandingPage from "../Button";
 
-const HeaderComponent = () => {
+const HeaderComponent = () => { 
   return (
-    <header className="flex items-center justify-between bg-[#F9FBFD] px-5 py-7">
-      <div className="logo">
-        <img
-          src={logoImages.logoAndBrand}
-          alt=""
-          className="w-[140px] object-cover object-center"
-        />
-      </div>
+    <div className=" sticky top-0 z-50 bg-[#F9FBFD] px-5 py-7">
+      <div className="flex items-center justify-between md:container md:mx-auto md:max-w-[1280px]">
+        <div className="logo">
+          <img
+            src={logoImages.logoAndBrand}
+            alt=""
+            className="w-[140px] object-cover object-center"
+          />
+        </div>
 
-      <ButtonLandingPage content="Đăng nhập" />
-    </header>
+        <ButtonLandingPage content="Đăng nhập" />
+      </div>
+    </div>
   );
 };
 

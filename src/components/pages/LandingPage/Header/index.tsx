@@ -1,7 +1,7 @@
 import logoImages from "../../../../assets/logo";
 import ButtonLandingPage from "../Button";
 
-const HeaderComponent = () => { 
+const HeaderComponent = () => {
   return (
     <div className=" sticky top-0 z-50 bg-[#F9FBFD] px-5 py-7">
       <div className="flex items-center justify-between md:container md:mx-auto md:max-w-[1280px]">
@@ -13,7 +13,7 @@ const HeaderComponent = () => {
           />
         </div>
 
-        <ButtonLandingPage content="Đăng nhập" />
+        <ButtonLandingPage content="Đăng nhập" navigation="/login" />
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import images from "../../../../assets/images";
 import dataJson from "../../../../pages/Landingpage/content.json";
-import FeaturesItemType from "../../../../types/LandingPage/features";
+import FeaturesItemType from "../../../../types/Pages/LandingPage/features";
 import FeaturesItem from "../Features/FeaturesItem";
 
 interface CoreValuesItemType {

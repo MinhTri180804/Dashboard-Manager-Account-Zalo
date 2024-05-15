@@ -1,6 +1,6 @@
 import images from "../../../../assets/images";
 import dataJson from "../../../../pages/Landingpage/content.json";
-import FeaturesItemType from "../../../../types/LandingPage/features";
+import FeaturesItemType from "../../../../types/Pages/LandingPage/features";
 import FeaturesItem from "./FeaturesItem";
 
 interface FeaturesComponentProps {
@@ -47,10 +47,10 @@ const FeaturesComponent: React.FC<FeaturesComponentProps> = ({
 }) => {
   return (
     <div>
-      <h2 className="font-montserrat px-[30px] text-center text-[24px] font-bold text-[#0F2137] md:text-[32px]">
+      <h2 className="px-[30px] text-center font-montserrat text-[24px] font-bold text-[#0F2137] md:text-[32px]">
         {title}
       </h2>
-      <h4 className="font-montserrat mt-2 text-center text-[14px] text-[#858B91] md:text-[16px]">
+      <h4 className="mt-2 text-center font-montserrat text-[14px] text-[#858B91] md:text-[16px]">
         {subTitle}
       </h4>
 

@@ -1,8 +1,8 @@
 import { Typography } from "antd";
-import logoImages from "../../assets/logo";
-import FormLoginComponent from "../../components/pages/Login/Form";
+import FormRegisterComponent from "../../../components/pages/Register/Form";
+import logoImages from "../../../assets/logo";
 
-const LoginPage: React.FC = () => {
+const RegisterPage: React.FC = () => {
   return (
     <div className="md:container md:mx-auto md:max-w-[1280px]">
       <div className="px-[20px] py-[80px]">
@@ -15,13 +15,13 @@ const LoginPage: React.FC = () => {
         </div>
         <div className="mx-auto md:max-w-[600px]">
           <Typography.Title level={4} className="mb-4">
-            Đăng nhập
+            Đăng kí
           </Typography.Title>
-          <FormLoginComponent />
+          <FormRegisterComponent />
         </div>
       </div>
     </div>
   );
 };
 
-export default LoginPage;
+export default RegisterPage;

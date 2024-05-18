@@ -1,4 +1,4 @@
-import { LoginRequest } from "../types/Api/Request/Auth";
+import { LoginRequest, RegisterRequest } from "../types/Api/Request/Auth";
 import { LoginResponse } from "../types/Api/Response/Auth";
 import axiosClient from "./axiosClient";
 
@@ -12,6 +12,9 @@ const authApi = {
         "Content-Type": "multipart/form-data",
       },
     });
+  },
+  register: (data: RegisterRequest) => {
+    return axiosClient.post<LoginResponse>("/authenticate/register", data);
   },
 };
 

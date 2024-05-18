@@ -1,10 +1,13 @@
 import React from "react";
 import type { FormProps } from "antd";
-import { Form, Input } from "antd";
+import { Button, Checkbox, Flex, Form, Input } from "antd";
 import authApi from "../../../../apis/authApi";
 import toast from "react-hot-toast";
 import { LoginResponse } from "../../../../types/Api/Response/Auth";
 import { AxiosResponse } from "axios";
+import { LockOutlined, UserOutlined } from "@ant-design/icons";
+import { Link } from "react-router-dom";
+import ROUTES from "../../../../utils/routes";
 
 type FieldType = {
   username?: string;
@@ -48,37 +51,62 @@ const onFinishFailed: FormProps<FieldType>["onFinishFailed"] = (errorInfo) => {
 const FormLoginComponent: React.FC = () => {
   return (
     <Form
-      name="form-login"
-      labelCol={{ span: 6 }}
-      wrapperCol={{ span: 16 }}
-      style={{ maxWidth: 600 }}
+      name="normal_login"
+      className="login-form"
+      initialValues={{ remember: true }}
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
-      autoComplete="on"
     >
-      <Form.Item<FieldType>
-        label="Tên đăng nhập"
+      <Form.Item
         name="username"
-        rules={[
-          { required: true, message: "Tên đăng nhập không được để trống!" },
-        ]}
+        rules={[{ required: true, message: "Please input your Username!" }]}
       >
-        <Input />
+        <Input
+          prefix={<UserOutlined className="site-form-item-icon" />}
+          placeholder="Email"
+          type="email"
+        />
       </Form.Item>
-
-      <Form.Item<FieldType>
-        label="Mật khẩu"
+      <Form.Item
         name="password"
-        rules={[{ required: true, message: "Mật khẩu không được để trống!" }]}
+        rules={[{ required: true, message: "Please input your Password!" }]}
       >
-        <Input.Password />
+        <Input
+          prefix={<LockOutlined className="site-form-item-icon" />}
+          type="password"
+          placeholder="Password"
+        />
+      </Form.Item>
+      <Form.Item>
+        <Flex justify="space-between" align="center">
+          <Form.Item name="remember" valuePropName="checked" noStyle>
+            <Checkbox>Ghi nhớ</Checkbox>
+          </Form.Item>
+
+          <Link to={"1"} className="login-form-forgot underline">
+            Quên mật khẩu
+          </Link>
+        </Flex>
       </Form.Item>
 
-      <div className="flex w-full items-center justify-center">
-        <button className=" to-bright-orange mx-auto mt-3 inline-block w-fit cursor-pointer rounded-[6px] bg-gradient-to-r from-bright-red px-3 py-2 font-montserrat text-white">
-          Đăng nhập
-        </button>
-      </div>
+      <Form.Item>
+        <Button
+          type="primary"
+          htmlType="submit"
+          className=" login-form-button w-full !bg-gradient-to-r from-[#ef4137] to-[#f79756] text-white hover:from-80%"
+        >
+          Đăng nhập ngay
+        </Button>
+        <div className="mt-2">
+          Hoặc {""}
+          <Link
+            to={ROUTES.REGISTER}
+            className="text-[14px] font-medium underline"
+          >
+            Bạn chưa có tài khoản ?
+          </Link>
+        </div>
+      </Form.Item>
     </Form>
   );
 };

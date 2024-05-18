@@ -15,6 +15,7 @@ import ManagerProxyPage from "../pages/Dashboard/ManagerProxy";
 import CreateProxy from "../pages/Dashboard/ManagerProxy/Create";
 import RegisterPage from "../pages/Dashboard/Registrer";
 import RegisterOtp from "../pages/Dashboard/Registrer/Otp";
+import ConfirmPaymentPage from "../pages/Dashboard/ConfirmPayment";
 
 const AppRouter = () => {
   const location = useLocation();
@@ -63,6 +64,11 @@ const AppRouter = () => {
         <Route
           path={`${ROUTES.DASHBOARD.MANAGER_PROXY.ROOT}/${ROUTES.DASHBOARD.MANAGER_PROXY.CREATE}`}
           element={<CreateProxy />}
+        />
+
+        <Route
+          path={ROUTES.DASHBOARD.CONFIRM_PAYMENT}
+          element={<ConfirmPaymentPage />}
         />
 
         <Route path="*" element={<NotFoundDashboard />} />

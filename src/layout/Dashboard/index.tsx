@@ -3,6 +3,7 @@ import {
   AimOutlined,
   ApartmentOutlined,
   AppstoreAddOutlined,
+  BankOutlined,
   BulbOutlined,
   CalendarOutlined,
   DiffOutlined,
@@ -97,6 +98,15 @@ const MenuItems: ItemType<MenuItemType>[] = [
     label: (
       <Link to={ROUTES.DASHBOARD.MANAGER_ACCOUNT}>
         Quản lí tài khoản nhân viên
+      </Link>
+    ),
+  },
+  {
+    key: "8",
+    icon: <BankOutlined />,
+    label: (
+      <Link to={ROUTES.DASHBOARD.CONFIRM_PAYMENT}>
+        Xác nhận thanh toán gói dịch vụ
       </Link>
     ),
   },

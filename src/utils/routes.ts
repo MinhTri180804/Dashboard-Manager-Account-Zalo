@@ -27,6 +27,7 @@ const ROUTES = {
     MANAGER_EMPLOYER: {
       ROOT: "quan-li-tai-khoan-nhan-vien",
     },
+    CONFIRM_PAYMENT: "xac-nhan-thanh-toan",
   },
 };
 

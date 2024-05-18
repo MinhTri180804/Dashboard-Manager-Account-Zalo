@@ -1,0 +1,16 @@
+.ant-menu-item.ant-menu-item-selected {
+  background: linear-gradient(90deg, #ef4137, #f79756);
+  color: #fff;
+}
+
+.ant-menu-submenu-selected > .ant-menu-submenu-title {
+  color: #fff;
+}
+
+.ant-menu-submenu-selected > .ant-menu-submenu-title {
+  color: #ef4137 !important;
+}
+
+.ant-menu-item.ant-menu-item-selected {
+  color: #fff !important;
+}

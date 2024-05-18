@@ -2,7 +2,12 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "bright-red": "#ef4137",
+        "bright-orange": "#F79756",
+      },
+    },
     fontFamily: {
       montserrat: "montserrat",
     },

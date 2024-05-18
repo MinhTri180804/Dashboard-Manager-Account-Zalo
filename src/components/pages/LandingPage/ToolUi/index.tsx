@@ -1,7 +1,7 @@
 import { useState } from "react";
 import iconsSvg from "../../../../assets/icons";
 import images from "../../../../assets/images";
-import { ToolUiItemType } from "../../../../types/LandingPage/toolUi";
+import { ToolUiItemType } from "../../../../types/Pages/LandingPage/toolUi";
 
 interface ToolUIComponentProps {
   title: string;

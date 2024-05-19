@@ -122,7 +122,7 @@ const items = [
   {
     key: "4",
     danger: true,
-    label: "Đăng xuất",
+    label: <Link to={ROUTES.LOGIN}>Đăng xuất</Link>,
   },
 ];
 

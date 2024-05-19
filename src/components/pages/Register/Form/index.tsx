@@ -2,11 +2,12 @@
 import type { FormProps } from "antd";
 import { Button, Form, Input } from "antd";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import authApi from "../../../../apis/authApi";
 import { AxiosResponse } from "axios";
 import { LoginResponse } from "../../../../types/Api/Response/Auth";
 import toast from "react-hot-toast";
+import ROUTES from "../../../../utils/routes";
 
 type FieldType = {
   username?: string;
@@ -14,35 +15,42 @@ type FieldType = {
   remember?: string;
 };
 
-const onFinish = async (values: any) => {
-  const { email, password, confirm } = values;
-  try {
-    await authApi
-      .register({ username: email, password, confirmPassword: confirm })
-      .then((res: AxiosResponse<LoginResponse>) => {
-        if (
-          res.data.resultCode === 200 &&
-          res.data.success &&
-          res.status === 200
-        ) {
-          window.location.href = "/dang-ki/opt";
-          toast.success("Đăng kí thành công !");
-        }
-      })
-      .catch((error) => {
-        console.error(error);
-        toast.error("Đăng kí thất bại !");
-      });
-  } catch (error) {
-    console.error(error);
-  }
-};
 const onFinishFailed: FormProps<FieldType>["onFinishFailed"] = (errorInfo) => {
   console.log("Failed:", errorInfo);
 };
 
 const FormRegisterComponent: React.FC = () => {
   const [form] = Form.useForm();
+  const [loadingButton, setLoadingButton] = React.useState<boolean>(false);
+  const navigate = useNavigate();
+
+  const onFinish = async (values: any) => {
+    const { email, password, confirm } = values;
+    try {
+      setLoadingButton(true);
+      await authApi
+        .register({ username: email, password, confirmPassword: confirm })
+        .then((res: AxiosResponse<LoginResponse>) => {
+          if (
+            res.data.resultCode === 200 &&
+            res.data.success &&
+            res.status === 200
+          ) {
+            navigate(ROUTES.REGISTER_OTP);
+            toast.success("Đã gửi mã xác nhận về gmail của bạn !");
+            setLoadingButton(false);
+          }
+        })
+        .catch((error) => {
+          console.error(error);
+          toast.error("Đăng kí thất bại !");
+          setLoadingButton(false);
+        });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <Form
       layout="vertical"
@@ -118,12 +126,13 @@ const FormRegisterComponent: React.FC = () => {
           type="primary"
           htmlType="submit"
           className=" login-form-button w-full !bg-gradient-to-r from-[#ef4137] to-[#f79756] text-white hover:from-80%"
+          loading={loadingButton}
         >
           Đăng kí tài khoản
         </Button>
         <div className="mt-2">
           Or{" "}
-          <Link to="" className="text-[14px] font-medium underline">
+          <Link to={ROUTES.LOGIN} className="text-[14px] font-medium underline">
             Đã có tài khoản
           </Link>
         </div>

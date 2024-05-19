@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import React from "react";
 import type { FormProps } from "antd";
 import { Button, Checkbox, Flex, Form, Input } from "antd";
@@ -6,7 +7,7 @@ import toast from "react-hot-toast";
 import { LoginResponse } from "../../../../types/Api/Response/Auth";
 import { AxiosResponse } from "axios";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ROUTES from "../../../../utils/routes";
 
 type FieldType = {
@@ -15,40 +16,45 @@ type FieldType = {
   remember?: string;
 };
 
-const onFinish: FormProps<FieldType>["onFinish"] = async (values) => {
-  const { username, password } = values;
-  if (!username || !password)
-    return toast.error("Username or password is empty!");
-
-  try {
-    await authApi
-      .login({ username, password })
-      .then((res: AxiosResponse<LoginResponse>) => {
-        if (
-          res.data.resultCode === 200 &&
-          res.data.success &&
-          res.status === 200
-        ) {
-          localStorage.setItem("token", res.data.data.token);
-          localStorage.setItem("refreshToken", res.data.data.refreshToken);
-          window.location.href = "/dashboard";
-          toast.success("Đăng nhập thành công !");
-        }
-      })
-      .catch((error) => {
-        console.error(error);
-        toast.error("Đăng nhập thất bại !");
-      });
-  } catch (error) {
-    console.error(error);
-  }
-};
-
 const onFinishFailed: FormProps<FieldType>["onFinishFailed"] = (errorInfo) => {
   console.log("Failed:", errorInfo);
 };
 
 const FormLoginComponent: React.FC = () => {
+  const navigate = useNavigate();
+  const [loadingButton, setLoadingButton] = React.useState<boolean>(false);
+
+  const onFinish: FormProps<FieldType>["onFinish"] = async (values) => {
+    const { username, password } = values;
+    if (!username || !password)
+      return toast.error("Username or password is empty!");
+
+    try {
+      setLoadingButton(true);
+      await authApi
+        .login({ username, password })
+        .then((res: AxiosResponse<LoginResponse>) => {
+          if (
+            res.data.resultCode === 200 &&
+            res.data.success &&
+            res.status === 200
+          ) {
+            localStorage.setItem("token", res.data.data.token);
+            localStorage.setItem("refreshToken", res.data.data.refreshToken);
+            navigate(ROUTES.DASHBOARD.ROOT);
+            toast.success("Đăng nhập thành công !");
+            setLoadingButton(false);
+          }
+        })
+        .catch((error) => {
+          console.error(error);
+          toast.error("Đăng nhập thất bại !");
+          setLoadingButton(false);
+        });
+    } catch (error) {
+      console.error(error);
+    }
+  };
   return (
     <Form
       name="normal_login"
@@ -94,6 +100,7 @@ const FormLoginComponent: React.FC = () => {
           type="primary"
           htmlType="submit"
           className=" login-form-button w-full !bg-gradient-to-r from-[#ef4137] to-[#f79756] text-white hover:from-80%"
+          loading={loadingButton}
         >
           Đăng nhập ngay
         </Button>

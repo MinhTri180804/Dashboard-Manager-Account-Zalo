@@ -1,11 +1,17 @@
 import { Button, Form, Input, TimePicker, Typography } from "antd";
 import toast from "react-hot-toast";
 import ROUTES from "../../../../utils/routes";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { PlusOutlined } from "@ant-design/icons";
 
 const formStyle: React.CSSProperties = {};
 
 const CreateProxy: React.FC = () => {
+  const navigate = useNavigate();
+  const [statusButton, setStatusButton] = useState<boolean>(false);
   const handleCreateProxy = () => {
+    setStatusButton(true);
     toast
       .promise(
         new Promise((resole) => {
@@ -21,8 +27,11 @@ const CreateProxy: React.FC = () => {
       )
       .then(() => {
         setTimeout(() => {
-          window.location.href = `${ROUTES.DASHBOARD.ROOT}/${ROUTES.DASHBOARD.MANAGER_PROXY.ROOT}`;
+          navigate(
+            `${ROUTES.DASHBOARD.ROOT}/${ROUTES.DASHBOARD.MANAGER_PROXY.ROOT}`,
+          );
         }, 1000);
+        setStatusButton(false);
       });
   };
 
@@ -51,6 +60,8 @@ const CreateProxy: React.FC = () => {
                 }}
                 className="sticky left-0 mt-5 w-full !bg-gradient-to-r from-[#ef4137] to-[#f79756] text-white hover:from-80%"
                 onClick={() => handleCreateProxy()}
+                loading={statusButton}
+                icon={<PlusOutlined />}
               >
                 Thêm Proxy
               </Button>

@@ -19,13 +19,17 @@ export const columnsManagerProxy: TableColumnsType = [
     title: "Proxy",
     dataIndex: "title",
     key: "proxy",
-    render: (title: string) => <div>{title}</div>,
+    render: (title: string) => (
+      <div className="w-[100px] md:w-full">{title}</div>
+    ),
   },
   {
     title: "Hạn sử dụng",
     dataIndex: "expired",
     key: "expired",
-    render: (expired: string) => <div>{expired}</div>,
+    render: (expired: string) => (
+      <div className="w-[100px] md:w-full">{expired}</div>
+    ),
   },
   {
     title: "Trạng thái",
@@ -55,7 +59,7 @@ export const columnsManagerProxy: TableColumnsType = [
     title: "Ghi chú",
     dataIndex: "note",
     key: "note",
-    render: () => <div>note</div>,
+    render: () => <div className="w-[200px] md:w-full">note</div>,
   },
   {
     title: "Tùy chọn",

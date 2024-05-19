@@ -122,7 +122,7 @@ const items = [
   {
     key: "4",
     danger: true,
-    label: "Đăng xuất",
+    label: <Link to={ROUTES.LOGIN}>Đăng xuất</Link>,
   },
 ];
 
@@ -165,6 +165,7 @@ const DashboardLayout: React.FC = () => {
                 className="text-[16px]"
                 items={MenuItems}
                 onClick={() => setCollapsed(true)}
+                defaultSelectedKeys={["1"]}
               />
             </div>
           </Flex>

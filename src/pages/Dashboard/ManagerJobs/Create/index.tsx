@@ -23,6 +23,7 @@ import AccountOptions from "../../../../components/pages/Dashboard/Post/Create/A
 import { PhoneType } from "../../../../types/Pages/Dashboard/Jobs";
 import ROUTES from "../../../../utils/routes";
 import validatePhoneVN from "../../../../utils/validationPhone";
+import { useNavigate } from "react-router-dom";
 
 const formStyle: React.CSSProperties = {};
 
@@ -85,6 +86,8 @@ const CreateJobPage: React.FC = () => {
   const [optionTarget, setOptionTarget] = useState(optionsTarget[0].value);
   const [optionPhones, setOptionPhones] = useState<optionsPhoneType[]>([]);
   const [optionZone, setOptionZone] = useState(optionsZone[0].value);
+  const [statusButton, setStatusButton] = useState(false);
+  const navigate = useNavigate();
 
   const onChangeOptionTarget = (value: string) => {
     setOptionTarget(value);
@@ -145,6 +148,7 @@ const CreateJobPage: React.FC = () => {
   };
 
   const handleCreateCampaign = () => {
+    setStatusButton(true);
     toast
       .promise(
         new Promise((resole) => {
@@ -160,7 +164,10 @@ const CreateJobPage: React.FC = () => {
       )
       .then(() => {
         setTimeout(() => {
-          window.location.href = `${ROUTES.DASHBOARD.ROOT}/${ROUTES.DASHBOARD.MANAGER_JOBS.ROOT}`;
+          navigate(
+            `${ROUTES.DASHBOARD.ROOT}/${ROUTES.DASHBOARD.MANAGER_JOBS.ROOT}`,
+          );
+          setStatusButton(false);
         }, 1000);
       });
   };
@@ -270,6 +277,7 @@ const CreateJobPage: React.FC = () => {
                     }}
                     className="sticky left-0 mt-5 w-full !bg-gradient-to-r from-[#ef4137] to-[#f79756] text-white hover:from-80%"
                     onClick={() => handleCreateCampaign()}
+                    loading={statusButton}
                   >
                     Tạo công việc
                   </Button>

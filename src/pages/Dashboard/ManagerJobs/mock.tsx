@@ -16,6 +16,9 @@ export const columns: TableColumnsType = [
     title: "Chiến dịch",
     dataIndex: "campaign",
     key: "campaign",
+    render: (campaign: string) => (
+      <div className="w-[100px] md:w-full">{campaign}</div>
+    ),
   },
   {
     title: "Tài khoản",
@@ -57,14 +60,14 @@ export const columns: TableColumnsType = [
     sorter: (a: IDataSourceJob, b: IDataSourceJob) =>
       a.resultProcess.countSuccess - b.resultProcess.countSuccess,
     render: (value) => (
-      <span
-        className={clsx([
+      <div
+        className={clsx("w-[100px] md:w-full", [
           value.countSuccess === value.target && "text-green-500",
         ])}
       >
         <span className="">{value.countSuccess}</span> /{" "}
         <span className="font-bold">{value.target}</span>
-      </span>
+      </div>
     ),
   },
   {

@@ -14,8 +14,8 @@ const RenderStatusProxy: React.FC<IRenderStatusProxyProps> = ({ status }) => {
           ? "Đang hoạt động"
           : "Có lỗi";
   return (
-    <div className="flex items-center justify-start gap-3">
-      <span className="relative flex h-3 w-3">
+    <div className="flex w-[200px] items-center justify-start gap-3 md:w-full">
+      <span className="relative flex h-3 ">
         <span
           className={clsx(
             "absolute inline-flex h-full w-full animate-ping rounded-full opacity-75",

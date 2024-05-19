@@ -15,6 +15,8 @@ import OptionsMethodPost from "../../../../components/pages/Dashboard/Post/Creat
 import ROUTES from "../../../../utils/routes";
 import { options, optionsAccount, optionsPost } from "./mock";
 import AccountOptions from "../../../../components/pages/Dashboard/Post/Create/AccountOptions";
+import { PlusOutlined } from "@ant-design/icons";
+import { useNavigate } from "react-router-dom";
 
 const formStyle: React.CSSProperties = {};
 
@@ -25,31 +27,36 @@ const onChangeTimePicker: TimePickerProps["onChange"] = (time, timeString) => {
   console.log(time, timeString);
 };
 
-const handleCreatePost = () => {
-  toast
-    .promise(
-      new Promise((resole) => {
-        setTimeout(() => {
-          resole("Tạo bài viết thành công");
-        }, 2000);
-      }),
-      {
-        loading: "Đang tạo bài viết",
-        success: "Tạo bài viết thành công",
-        error: "Tạo bài viết thất bại",
-      },
-    )
-    .then(() => {
-      setTimeout(() => {
-        window.location.href = `${ROUTES.DASHBOARD.ROOT}/${ROUTES.DASHBOARD.POST.ROOT}`;
-      }, 1000);
-    });
-};
-
 const CreatePostPage = () => {
   const [option, setOption] = useState(options[1].value);
   const [optionPost, setOptionPost] = useState(optionsPost[1].value);
   const [optionAccount, setOptionAccount] = useState(optionsAccount[0].value);
+  const [statusButton, setStatusButton] = useState<boolean>(false);
+
+  const navigate = useNavigate();
+
+  const handleCreatePost = () => {
+    setStatusButton(true);
+    toast
+      .promise(
+        new Promise((resole) => {
+          setTimeout(() => {
+            resole("Tạo bài viết thành công");
+          }, 2000);
+        }),
+        {
+          loading: "Đang tạo bài viết",
+          success: "Tạo bài viết thành công",
+          error: "Tạo bài viết thất bại",
+        },
+      )
+      .then(() => {
+        setTimeout(() => {
+          navigate(`${ROUTES.DASHBOARD.ROOT}/${ROUTES.DASHBOARD.POST.ROOT}`);
+        }, 500);
+        setStatusButton(false);
+      });
+  };
   return (
     <section className="md:container md:mx-auto md:max-w-[70%]">
       <Typography.Title level={3}>Tạo bài viết đăng tự động</Typography.Title>
@@ -112,6 +119,8 @@ const CreatePostPage = () => {
               style={{ width: "100%", padding: "10px 0px", height: "auto" }}
               className="sticky left-0 w-full !bg-gradient-to-r from-[#ef4137] to-[#f79756] text-white hover:from-80%"
               onClick={() => handleCreatePost()}
+              loading={statusButton}
+              icon={<PlusOutlined />}
             >
               Tạo bài viết
             </Button>

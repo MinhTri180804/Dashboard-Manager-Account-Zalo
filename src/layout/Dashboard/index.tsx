@@ -84,7 +84,9 @@ const MenuItems: ItemType<MenuItemType>[] = [
     key: "4",
     icon: <TeamOutlined />,
     label: (
-      <Link to={ROUTES.DASHBOARD.MANAGER_ACCOUNT}>Quản lí tài khoản zalo</Link>
+      <Link to={ROUTES.DASHBOARD.MANAGER_ACCOUNT_ZALO.ROOT}>
+        Quản lí tài khoản zalo
+      </Link>
     ),
   },
   {
@@ -96,7 +98,7 @@ const MenuItems: ItemType<MenuItemType>[] = [
     key: "7",
     icon: <AppstoreAddOutlined />,
     label: (
-      <Link to={ROUTES.DASHBOARD.MANAGER_ACCOUNT}>
+      <Link to={ROUTES.DASHBOARD.MANAGER_EMPLOYER.ROOT}>
         Quản lí tài khoản nhân viên
       </Link>
     ),

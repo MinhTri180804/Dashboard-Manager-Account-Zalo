@@ -28,6 +28,16 @@ const ROUTES = {
       ROOT: "quan-li-tai-khoan-nhan-vien",
     },
     CONFIRM_PAYMENT: "xac-nhan-thanh-toan",
+    MANAGER_ACCOUNT_ZALO: {
+      ROOT: "quan-li-tai-khoan-zalo",
+      CREATE: "them-tai-khoan-zalo",
+      FRIEND: "ban-be",
+      GROUP: "nhom",
+      AUTO_ADD_FRIEND: "tu-dong-them-ban",
+      MODIFIED_AVATAR: "chinh-sua-anh-dai-dien",
+      INVITATION_FRIEND: "loi-moi-ket-ban",
+      INVITATION_REQUEST_FRIEND: "loi-moi-ket-ban-da-gui",
+    },
   },
 };
 

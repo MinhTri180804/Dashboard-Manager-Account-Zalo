@@ -32,8 +32,8 @@ const CreateProxy: React.FC = () => {
         <Typography.Title level={3}>Thêm mới proxy</Typography.Title>
         <div className="mt-6">
           <Form layout="vertical" style={formStyle}>
-            <Form.Item label="Tên proxy">
-              <Input type="text" placeholder="Nhập tên chiến dịch" />
+            <Form.Item label="Proxy">
+              <Input type="text" placeholder="Nhập proxy" />
             </Form.Item>
             <Form.Item label="Hạn sử dụng">
               <TimePicker className="w-full" placeholder="Chọn thời gian" />

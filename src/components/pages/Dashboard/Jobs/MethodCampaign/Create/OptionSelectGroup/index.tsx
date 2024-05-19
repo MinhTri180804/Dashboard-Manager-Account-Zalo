@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Avatar, Button, Checkbox, List, Modal, Typography } from "antd";
 import Sider from "antd/es/layout/Sider";
 import { useState } from "react";
@@ -66,26 +67,37 @@ const OptionSelectGroup = () => {
         <List
           itemLayout="horizontal"
           dataSource={data}
-          renderItem={(item, index) => (
-            <>
-              <List.Item className="gap-5">
-                <Checkbox checked />
-                <List.Item.Meta
-                  className="w-full"
-                  avatar={
-                    <Avatar
-                      src={`https://api.dicebear.com/7.x/miniavs/svg?seed=${index}`}
-                    />
-                  }
-                  title={<a href="https://ant.design">{item.title}</a>}
-                  description={`${item.countUsers} thành viên`}
-                />
-              </List.Item>
-            </>
-          )}
+          renderItem={(item, index) => <RenderItem item={item} index={index} />}
         />
       </Modal>
     </>
+  );
+};
+
+interface IRenderItem {
+  item: any;
+  index: number;
+}
+
+const RenderItem: React.FC<IRenderItem> = ({ item, index }) => {
+  const [isSelected, setIsSelected] = useState(true);
+  return (
+    <List.Item className="gap-5">
+      <Checkbox
+        checked={isSelected}
+        onChange={() => setIsSelected(!isSelected)}
+      />
+      <List.Item.Meta
+        className="w-full"
+        avatar={
+          <Avatar
+            src={`https://api.dicebear.com/7.x/miniavs/svg?seed=${index}`}
+          />
+        }
+        title={<a href="https://ant.design">{item.title}</a>}
+        description={`${item.countUsers} thành viên`}
+      />
+    </List.Item>
   );
 };
 

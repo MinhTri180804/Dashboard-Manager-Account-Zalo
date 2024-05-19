@@ -165,6 +165,7 @@ const DashboardLayout: React.FC = () => {
                 className="text-[16px]"
                 items={MenuItems}
                 onClick={() => setCollapsed(true)}
+                defaultSelectedKeys={["1"]}
               />
             </div>
           </Flex>

@@ -167,17 +167,17 @@ const CreateJobPage: React.FC = () => {
 
   return (
     <section className="md:container md:mx-auto">
-      <Typography.Title level={3}>Tạo bài viết đăng tự động</Typography.Title>
+      <Typography.Title level={3}>Tạo công việc</Typography.Title>
       <div className="mt-6">
         <Layout className="gap-16 bg-white">
           <Content className="bg-white">
             <Form layout="vertical" style={formStyle}>
-              <Form.Item label="Tên chiến dịch">
-                <Input type="text" placeholder="Nhập tên chiến dịch" />
+              <Form.Item label="Tên công việc">
+                <Input type="text" placeholder="Nhập tên công việc" />
               </Form.Item>
-              <Form.Item label="Mục tiêu chiến dịch">
+              <Form.Item label="Mục tiêu công việc">
                 <Select
-                  placeholder="Chọn mục tiêu chiến dịch"
+                  placeholder="Chọn mục tiêu công việc"
                   options={optionsTarget}
                   defaultValue={optionsTarget[0].value}
                   onChange={(value: string) => onChangeOptionTarget(value)}
@@ -198,8 +198,8 @@ const CreateJobPage: React.FC = () => {
                   {optionTarget === "2" && <OptionSelectGroup />}
                 </div>
               </Form.Item>
-              <Form.Item label="Nội dung chiến dịch">
-                <Input.TextArea placeholder="Nhập nội dung chiến dịch" />
+              <Form.Item label="Nội dung công việc">
+                <Input.TextArea placeholder="Nhập nội dung công việc" />
               </Form.Item>
               <Form.Item label="Hình ảnh kèm theo">
                 <Dragger {...props}>

@@ -1,3 +1,4 @@
+import { PlusOutlined } from "@ant-design/icons";
 import { Button, Flex, Table, Typography } from "antd";
 import { Link } from "react-router-dom";
 import ROUTES from "../../../utils/routes";
@@ -18,6 +19,7 @@ const ManagerProxyPage: React.FC = () => {
             type="primary"
             className="sticky left-0 hidden !bg-gradient-to-r from-[#ef4137] to-[#f79756] text-white hover:from-80% md:block"
             size="middle"
+            icon={<PlusOutlined />}
           >
             Thêm Proxy
           </Button>

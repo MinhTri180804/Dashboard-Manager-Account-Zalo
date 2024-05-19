@@ -1,5 +1,6 @@
 import { Button, TableColumnsType } from "antd";
 import RenderStatusProxy from "../../../components/pages/Dashboard/Proxy/Table/Column/Status";
+import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
 
 type IDataSourceProxy = {
   id: number;
@@ -62,8 +63,10 @@ export const columnsManagerProxy: TableColumnsType = [
     key: "options",
     render: () => (
       <div className="flex items-center justify-start gap-2">
-        <Button type="default">Sửa</Button>
-        <Button type="default" danger>
+        <Button type="default" icon={<EditOutlined />}>
+          Sửa
+        </Button>
+        <Button type="default" danger icon={<DeleteOutlined />}>
           Xóa
         </Button>
       </div>

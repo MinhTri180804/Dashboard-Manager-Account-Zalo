@@ -16,6 +16,13 @@ import CreateProxy from "../pages/Dashboard/ManagerProxy/Create";
 import RegisterPage from "../pages/Dashboard/Registrer";
 import RegisterOtp from "../pages/Dashboard/Registrer/Otp";
 import ConfirmPaymentPage from "../pages/Dashboard/ConfirmPayment";
+import ManagerEmployer from "../pages/Dashboard/ManagerEmploye";
+import ManagerAccountZaloPage from "../pages/Dashboard/ManagerAccountZalo";
+import FriendPage from "../pages/Dashboard/ManagerAccountZalo/Friend";
+import GroupPage from "../pages/Dashboard/ManagerAccountZalo/Group";
+import AutoAddFriendPage from "../pages/Dashboard/ManagerAccountZalo/AutoAddFiend";
+import InvitationFriendPage from "../pages/Dashboard/ManagerAccountZalo/InvitationFriend";
+import InvitationRequestPage from "../pages/Dashboard/ManagerAccountZalo/InvitationRequest";
 
 const AppRouter = () => {
   const location = useLocation();
@@ -67,8 +74,39 @@ const AppRouter = () => {
         />
 
         <Route
+          path={ROUTES.DASHBOARD.MANAGER_EMPLOYER.ROOT}
+          element={<ManagerEmployer />}
+        />
+
+        <Route
           path={ROUTES.DASHBOARD.CONFIRM_PAYMENT}
           element={<ConfirmPaymentPage />}
+        />
+
+        <Route
+          path={ROUTES.DASHBOARD.MANAGER_ACCOUNT_ZALO.ROOT}
+          element={<ManagerAccountZaloPage />}
+        />
+
+        <Route
+          path={`${ROUTES.DASHBOARD.MANAGER_ACCOUNT_ZALO.ROOT}/:id/${ROUTES.DASHBOARD.MANAGER_ACCOUNT_ZALO.FRIEND}`}
+          element={<FriendPage />}
+        />
+        <Route
+          path={`${ROUTES.DASHBOARD.MANAGER_ACCOUNT_ZALO.ROOT}/:id/${ROUTES.DASHBOARD.MANAGER_ACCOUNT_ZALO.GROUP}`}
+          element={<GroupPage />}
+        />
+        <Route
+          path={`${ROUTES.DASHBOARD.MANAGER_ACCOUNT_ZALO.ROOT}/:id/${ROUTES.DASHBOARD.MANAGER_ACCOUNT_ZALO.AUTO_ADD_FRIEND}`}
+          element={<AutoAddFriendPage />}
+        />
+        <Route
+          path={`${ROUTES.DASHBOARD.MANAGER_ACCOUNT_ZALO.ROOT}/:id/${ROUTES.DASHBOARD.MANAGER_ACCOUNT_ZALO.INVITATION_FRIEND}`}
+          element={<InvitationFriendPage />}
+        />
+        <Route
+          path={`${ROUTES.DASHBOARD.MANAGER_ACCOUNT_ZALO.ROOT}/:id/${ROUTES.DASHBOARD.MANAGER_ACCOUNT_ZALO.INVITATION_REQUEST_FRIEND}`}
+          element={<InvitationRequestPage />}
         />
 
         <Route path="*" element={<NotFoundDashboard />} />

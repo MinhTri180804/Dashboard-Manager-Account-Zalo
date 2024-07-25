@@ -1,30 +1,54 @@
-# React + TypeScript + Vite
+markdown
+Sao chép mã
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Zalo Account Management and Customer Dashboard Demo
 
-Currently, two official plugins are available:
+Welcome to the Zalo Account Management and Customer Dashboard Demo project. This repository contains the demo layout and interface for the landing page and dashboard of a website designed to manage Zalo accounts and customers.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Overview
 
-## Expanding the ESLint configuration
+This project provides a visually appealing and user-friendly interface for:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Landing Page**: The introductory page where users can learn about the features and benefits of our Zalo account management system.
+- **Dashboard**: A comprehensive dashboard where users can manage their Zalo accounts and customers efficiently.
 
-- Configure the top-level `parserOptions` property like this:
+## Features
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+- **Responsive Design**: Ensuring a seamless experience across various devices.
+- **Intuitive Interface**: User-friendly navigation and interaction.
+- **Real-time Data**: Dynamic updates for a better user experience.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Getting Started
+
+To explore the demo, you can use the following test credentials:
+
+- **Email**: test@gmail.com
+- **Password**: test@gmail.com
+
+### Prerequisites
+
+Make sure you have the following installed:
+
+- Node.js
+- npm (Node Package Manager)
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/zalo-account-management-demo.git
+   Navigate to the project directory:
+   bash
+   Sao chép mã
+   cd zalo-account-management-demo
+   Install the dependencies:
+   bash
+   Sao chép mã
+   npm install
+   Running the Project
+   To start the project, run:
+   ```
+   npm run dev
+   ```
+
+   ```

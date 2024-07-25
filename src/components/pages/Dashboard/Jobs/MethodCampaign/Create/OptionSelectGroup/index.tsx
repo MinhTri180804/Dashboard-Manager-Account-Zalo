@@ -24,8 +24,10 @@ const data = [
 
 const OptionSelectGroup = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
+
   return (
     <>
+      <Button type="primary">Handle Click</Button>
       <Button
         type="primary"
         className="mt-2 md:hidden"

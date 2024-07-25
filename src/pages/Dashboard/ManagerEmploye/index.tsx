@@ -1,4 +1,4 @@
-import { ConfigProvider, Flex, Table, Typography } from "antd";
+import { Button, ConfigProvider, Flex, Table, Typography } from "antd";
 import { columnsManagerEmployer, dataSourceManagerEmployer } from "./mock";
 
 const ManagerEmployer: React.FC = () => {
@@ -8,31 +8,7 @@ const ManagerEmployer: React.FC = () => {
         <Typography.Title level={3} className="block w-full">
           Quản lí tài khoản nhân viên
         </Typography.Title>
-        {/* <Link
-          className="mb-3 hidden md:block md:w-fit"
-          to={`${ROUTES.DASHBOARD.MANAGER_JOBS.CREATE}`}
-        >
-          <Button
-            type="primary"
-            className="sticky left-0 hidden flex-1  !bg-gradient-to-r from-[#ef4137] to-[#f79756] text-white hover:from-80% md:block"
-            size="middle"
-          >
-            Thêm taif k
-          </Button>
-        </Link> */}
       </Flex>
-      {/* <Link
-        className="mb-3 md:hidden md:w-fit"
-        to={`${ROUTES.DASHBOARD.MANAGER_JOBS.CREATE}`}
-      >
-        <Button
-          type="primary"
-          className="sticky left-0  mb-3 !bg-gradient-to-r from-[#ef4137] to-[#f79756] text-white hover:from-80% md:hidden"
-          size="middle"
-        >
-          Thêm công việc
-        </Button>
-      </Link> */}
       <div className="w-full overflow-scroll">
         <ConfigProvider
           theme={{

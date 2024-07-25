@@ -1,6 +1,6 @@
 import { Select } from "antd";
-import SelectPhone from "./SelectPhone";
 import { PhoneType } from "../../../../../../../types/Pages/Dashboard/Jobs";
+import SelectPhone from "./SelectPhone";
 
 interface IOptionSelectPhoneProps {
   optionPhones: PhoneType[];
